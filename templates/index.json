@@ -144,6 +144,7 @@
         "heading": "",
         "heading_size": "h1",
         "enable_video_looping": false,
+        "video": "shopify://files/videos/Blue Gradient Traditional Saree Sale Instagram Story.mp4",
         "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
@@ -158,8 +159,9 @@
         "column1": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/ChatGPT_Image_Jul_19_2025_12_08_09_AM.png",
+            "title": "Ethically Made",
+            "text": "<p>We support skilled local artisans and ensure every saree is crafted with care, respect, and tradition.</p>",
             "link_label": "",
             "link": ""
           }
@@ -167,8 +169,9 @@
         "column2": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/ChatGPT_Image_Jul_19_2025_12_09_46_AM.png",
+            "title": "Fast & Reliable Shipping",
+            "text": "<p>Get your favorite styles delivered quickly and safely across India with real-time tracking.</p>",
             "link_label": "",
             "link": ""
           }
@@ -176,8 +179,9 @@
         "column3": {
           "type": "column",
           "settings": {
-            "title": "Column",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "image": "shopify://shop_images/ChatGPT_Image_Jul_19_2025_12_11_10_AM.png",
+            "title": "Friendly Support",
+            "text": "<p>Our team is always ready to help with size guidance, order issues, and styling advice – just a message away!</p>",
             "link_label": "",
             "link": ""
           }
