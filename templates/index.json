@@ -140,6 +140,7 @@
     },
     "video": {
       "type": "video",
+      "custom_css": [],
       "settings": {
         "heading": "",
         "heading_size": "h1",
