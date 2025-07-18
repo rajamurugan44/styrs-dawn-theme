@@ -9,6 +9,20 @@
  */
 {
   "sections": {
+    "slideshow_8gKMLn": {
+      "type": "slideshow",
+      "name": "t:sections.slideshow.presets.name",
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "counter",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -212,6 +226,7 @@
     }
   },
   "order": [
+    "slideshow_8gKMLn",
     "image_banner",
     "rich_text",
     "featured_collection",
