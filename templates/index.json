@@ -105,20 +105,20 @@
         "collection-0": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "silk-sarees"
           }
         },
         "product": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "elegant-peach-cotton-kurti-for-women-3-4-sleeve-side-slit-casual-office-wear",
             "second_image": false
           }
         },
         "collection-1": {
           "type": "collection",
           "settings": {
-            "collection": ""
+            "collection": "silk-sarees"
           }
         }
       },
