@@ -44,7 +44,7 @@
       "settings": {
         "image": "shopify://shop_images/Red_and_Yellow_Photo_Saree_Sale_Facebook_Ad_1.jpg",
         "image_overlay_opacity": 40,
-        "image_height": "medium",
+        "image_height": "small",
         "image_behavior": "none",
         "desktop_content_position": "bottom-center",
         "desktop_content_alignment": "center",
