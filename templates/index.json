@@ -75,6 +75,9 @@
         "slide_ccAcN4",
         "slide_y8YUkJ"
       ],
+      "custom_css": [
+        ".slideshow__controls{position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10;}"
+      ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
