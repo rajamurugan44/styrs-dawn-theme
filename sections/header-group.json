@@ -17,8 +17,8 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "Welcome to our store",
-            "link": ""
+            "text": "🚚 Free Shipping on all orders above ₹999 – Shop your favorites now!",
+            "link": "shopify://collections"
           }
         }
       },
@@ -26,7 +26,7 @@
         "announcement-bar-0"
       ],
       "settings": {
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 5,
         "color_scheme": "",
         "show_line_separator": true,
