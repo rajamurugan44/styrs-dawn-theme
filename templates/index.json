@@ -12,6 +12,25 @@
     "slideshow_8gKMLn": {
       "type": "slideshow",
       "blocks": {
+        "slide_y8YUkJ": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/www.styRS.in.jpg",
+            "image_link": "shopify://collections",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_9fE4NG": {
           "type": "slide",
           "settings": {
@@ -33,6 +52,7 @@
         }
       },
       "block_order": [
+        "slide_y8YUkJ",
         "slide_9fE4NG"
       ],
       "name": "t:sections.slideshow.presets.name",
