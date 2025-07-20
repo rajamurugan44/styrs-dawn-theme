@@ -11,6 +11,30 @@
   "sections": {
     "slideshow_8gKMLn": {
       "type": "slideshow",
+      "blocks": {
+        "slide_9fE4NG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/www.styRS.in_1.jpg",
+            "image_link": "shopify://collections/silk-sarees",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        }
+      },
+      "block_order": [
+        "slide_9fE4NG"
+      ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
         "layout": "full_bleed",
@@ -41,6 +65,7 @@
       "block_order": [
         "button"
       ],
+      "disabled": true,
       "settings": {
         "image": "shopify://shop_images/Red_and_Yellow_Photo_Saree_Sale_Facebook_Ad_1.jpg",
         "image_overlay_opacity": 40,
