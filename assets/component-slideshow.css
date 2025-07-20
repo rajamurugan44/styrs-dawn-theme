@@ -20,14 +20,6 @@ slideshow-component .slideshow.banner {
   visibility: visible;
 }
 
-.slideshow__controls {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-}
-
 @media screen and (max-width: 749px) {
 
   .slideshow--placeholder.banner--mobile-bottom.banner--adapt_image .slideshow__media,
