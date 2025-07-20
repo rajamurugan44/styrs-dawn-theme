@@ -12,6 +12,25 @@
     "slideshow_8gKMLn": {
       "type": "slideshow",
       "blocks": {
+        "slide_9fE4NG": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/www.styRS.in_1.jpg",
+            "image_link": "shopify://collections/silk-sarees",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_ccAcN4": {
           "type": "slide",
           "settings": {
@@ -49,31 +68,12 @@
             "text_alignment_mobile": "center",
             "color_scheme": "scheme-1"
           }
-        },
-        "slide_9fE4NG": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify://shop_images/www.styRS.in_1.jpg",
-            "image_link": "shopify://collections/silk-sarees",
-            "image_overlay_opacity": 0,
-            "heading": "",
-            "heading_size": "h1",
-            "subheading": "",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "show_text_box": false,
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "text_alignment_mobile": "center",
-            "color_scheme": "scheme-1"
-          }
         }
       },
       "block_order": [
+        "slide_9fE4NG",
         "slide_ccAcN4",
-        "slide_y8YUkJ",
-        "slide_9fE4NG"
+        "slide_y8YUkJ"
       ],
       "name": "t:sections.slideshow.presets.name",
       "settings": {
