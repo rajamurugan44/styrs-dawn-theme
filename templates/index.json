@@ -53,6 +53,7 @@
         },
         "slide_y8YUkJ": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/www.styRS.in.jpg",
             "image_link": "shopify://collections",
