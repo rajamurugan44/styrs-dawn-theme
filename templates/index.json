@@ -289,6 +289,49 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1753100976546f5344": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_ee6d6f6_r8KyDQ": {
+          "type": "ai_gen_block_ee6d6f6",
+          "settings": {
+            "title": "The Future of Fashion",
+            "subtitle": "Redefining Elegance — One Saree at a Time",
+            "author": "",
+            "date": "",
+            "reading_time": "",
+            "featured_image": "shopify://shop_images/www.styRS.in_1.jpg",
+            "intro_text": "<p>Step into a new era where tradition meets modern artistry. Our women’s collection is not just about clothing — it’s about confidence, culture, and timeless beauty. Inspired by heritage, designed for today’s empowered woman, each piece tells a story of elegance woven with care.</p>",
+            "body_text": "<p>Our latest women’s collection celebrates the spirit of femininity through a fusion of classic silhouettes and contemporary style. From luxurious handwoven sarees to minimalist everyday drapes, every design is a tribute to the craftsmanship and individuality of Indian textiles.</p><p>Highlights of the collection include:</p><ul><li> Crafted using sustainable practices and love.<br/></li><li> Perfect for festive moments, casual elegance, and work-ready looks.<br/></li><li> Blending tradition with today’s fashion edge.<br/></li></ul><p>Whether you're celebrating a milestone or embracing everyday grace, our collection is tailored to reflect your unique essence. Join us in shaping the future of fashion — where heritage shines with modern light.</p>",
+            "quote_text": "Great design is not just about aesthetics, it's about creating meaningful connections between people and products.",
+            "quote_author": "STYRS",
+            "sidebar_title": "Key Points",
+            "sidebar_content": "<p>• <strong>Made with Love</strong>: Each saree tells a unique story of artistry, care, and tradition.<br/><br/>• <strong>Versatility in Style</strong>: Suitable for festive occasions, office wear, and everyday elegance.<br/><br/>• <strong>Fusion of Tradition & Modernity</strong>: Blending classic saree craftsmanship with contemporary designs.</p>",
+            "cta_text": "Explore Collection",
+            "cta_link": "shopify://collections",
+            "heading_font": "helvetica_n4",
+            "body_font": "helvetica_n4",
+            "title_size": 48,
+            "subtitle_size": 20,
+            "intro_size": 20,
+            "body_size": 16,
+            "quote_size": 24,
+            "background_color": "#ffffff",
+            "text_color": "#000000",
+            "accent_color": "#cccccc",
+            "quote_bg_color": "#f8f8f8",
+            "button_color": "#000000",
+            "button_text_color": "#ffffff",
+            "section_padding": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_ee6d6f6_r8KyDQ"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -298,6 +341,7 @@
     "featured_collection",
     "collage",
     "video",
-    "multicolumn"
+    "multicolumn",
+    "1753100976546f5344"
   ]
 }
