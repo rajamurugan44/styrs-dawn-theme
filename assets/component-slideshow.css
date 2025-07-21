@@ -212,12 +212,12 @@ slideshow-component:not(.page-width) .slider-buttons {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 748px) {
   .slideshow__controls.slider-buttons.slideshow__controls--border-radius-mobile {
     top: 90% !important;
     position: absolute;
     bottom: 0;
-    z-index: 9;
+    z-index: 2;
     left: 50%;
     transform: translateX(-50%);
     border: none;
@@ -228,7 +228,7 @@ slideshow-component:not(.page-width) .slider-buttons {
   .slideshow__controls {
     position: absolute;
     bottom: 0;
-    z-index: 9;
+    z-index: 2;
     left: 50%;
     transform: translateX(-50%);
     border: none;
