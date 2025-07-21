@@ -33,6 +33,7 @@
         },
         "slide_ccAcN4": {
           "type": "slide",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Red_and_Yellow_Photo_Saree_Sale_Facebook_Ad.jpg",
             "image_link": "shopify://collections",
