@@ -295,6 +295,7 @@
       "blocks": {
         "ai_gen_block_ee6d6f6_r8KyDQ": {
           "type": "ai_gen_block_ee6d6f6",
+          "disabled": true,
           "settings": {
             "title": "The Future of Fashion",
             "subtitle": "Redefining Elegance — One Saree at a Time",
