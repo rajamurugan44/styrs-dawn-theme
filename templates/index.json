@@ -31,6 +31,44 @@
             "color_scheme": "scheme-1"
           }
         },
+        "slide_PpUtzy": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Add_a_heading.jpg",
+            "image_link": "shopify://collections/silk-sarees",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
+        "slide_aAQhQW": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Add_a_heading.jpg",
+            "image_link": "shopify://collections/silk-sarees",
+            "image_overlay_opacity": 0,
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "show_text_box": false,
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "text_alignment_mobile": "center",
+            "color_scheme": "scheme-1"
+          }
+        },
         "slide_ccAcN4": {
           "type": "slide",
           "disabled": true,
@@ -74,6 +112,8 @@
       },
       "block_order": [
         "slide_9fE4NG",
+        "slide_PpUtzy",
+        "slide_aAQhQW",
         "slide_ccAcN4",
         "slide_y8YUkJ"
       ],
