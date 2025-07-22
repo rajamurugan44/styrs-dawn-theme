@@ -3625,3 +3625,7 @@ header.header.header--middle-left.header--mobile-center.page-width.header--has-m
     object-fit: cover !important;
   }
 }
+
+.header__menu-item svg {
+  display: none !important;
+}
