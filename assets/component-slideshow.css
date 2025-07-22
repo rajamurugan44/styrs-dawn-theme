@@ -207,14 +207,14 @@ slideshow-component:not(.page-width) .slider-buttons {
     display: none;
   }
 
-  .banner__media {
+  /* .banner__media {
     position: unset !important;
-  }
+  } */
 }
 
 @media screen and (max-width: 748px) {
   .slideshow__controls.slider-buttons.slideshow__controls--border-radius-mobile {
-    top: 90% !important;
+    top: 15% !important;
     position: absolute;
     bottom: 0;
     z-index: 2;
