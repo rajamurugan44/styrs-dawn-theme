@@ -206,15 +206,17 @@ slideshow-component:not(.page-width) .slider-buttons {
   .banner--medium:not(.banner--mobile-bottom):not(.banner--adapt) .banner__content {
     display: none;
   }
+}
 
-  /* .banner__media {
-    position: unset !important;
-  } */
+@media screen and (max-width: 749px) {
+  .banner--mobile-bottom:not(.banner--stacked) .banner__content {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 748px) {
   .slideshow__controls.slider-buttons.slideshow__controls--border-radius-mobile {
-    top: 15% !important;
+    top: 80% !important;
     position: absolute;
     bottom: 0;
     z-index: 2;
