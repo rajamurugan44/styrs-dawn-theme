@@ -152,6 +152,7 @@
         "image-with-text-0",
         "image-with-text-1"
       ],
+      "disabled": true,
       "settings": {
         "height": "small",
         "desktop_image_width": "medium",
@@ -214,7 +215,7 @@
       "type": "related-products",
       "settings": {
         "heading": "You may also like",
-        "heading_size": "h2",
+        "heading_size": "h1",
         "products_to_show": 4,
         "columns_desktop": 4,
         "columns_mobile": "2",
@@ -222,7 +223,7 @@
         "image_ratio": "square",
         "image_shape": "default",
         "show_secondary_image": true,
-        "show_vendor": false,
+        "show_vendor": true,
         "show_rating": false,
         "padding_top": 36,
         "padding_bottom": 28
