@@ -585,3 +585,26 @@
   margin-bottom: 3px;
   font-family: Cormorant, serif;
 }
+
+.quick-add {
+  width: 90%;
+  justify-self: center;
+  padding-bottom: 10px;
+}
+
+.quick-add__submit {
+  background-color: #161516;
+
+  span {
+    color: #f5f1f1;
+  }
+
+}
+
+@media screen and (max-width: 749px) {
+  .quick-add {
+    width: 90%;
+    justify-self: center;
+    padding-bottom: 10px;
+  }
+}

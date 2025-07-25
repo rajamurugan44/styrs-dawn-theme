@@ -3638,3 +3638,19 @@ header.header.header--middle-left.header--mobile-center.page-width.header--has-m
 .product-card-wrapper .card:hover {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
+
+
+
+/* Hover on product and display add to cart button */
+/* @media (min-width: 1367px) {
+  .quick-add {
+    position: absolute;
+    bottom: 130px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .card-wrapper:hover .quick-add {
+    opacity: 1;
+  }
+} */
