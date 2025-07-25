@@ -3629,3 +3629,20 @@ header.header.header--middle-left.header--mobile-center.page-width.header--has-m
 .header__menu-item svg {
   display: none !important;
 }
+
+.product-grid {
+  /* You can increase this number a little bit to make product images larger */
+  width: 110%;
+
+  margin-left: -50px !important;
+}
+
+.product-grid .grid__item {
+  /* You can increase this number a little bit to make the space between products larger */
+  padding-left: 15px;
+  padding-top: 15px;
+}
+
+.product-card-wrapper .card:hover {
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+}
