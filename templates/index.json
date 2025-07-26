@@ -228,7 +228,7 @@
         "image_ratio": "portrait",
         "columns_desktop": 2,
         "color_scheme": "",
-        "show_view_all": true,
+        "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_top": 36,
