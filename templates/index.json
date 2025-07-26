@@ -210,6 +210,7 @@
         },
         "featured_collection_CWwmeD": {
           "type": "featured_collection",
+          "disabled": true,
           "settings": {
             "collection": "399-kurtis"
           }
@@ -224,8 +225,8 @@
       "settings": {
         "title": "SHOP BY COLLECTIONS",
         "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
+        "image_ratio": "portrait",
+        "columns_desktop": 2,
         "color_scheme": "",
         "show_view_all": true,
         "columns_mobile": "1",
