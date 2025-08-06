@@ -294,6 +294,16 @@
   line-height: 22px;
   text-transform: uppercase;
   color: #161516;
+
+  /* Below code is used to display product title 2 lines only */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* number of lines to show */
+  line-clamp: 2;
+  /* standard property for compatibility */
+  -webkit-box-orient: vertical;
 }
 
 .card__heading:last-child {
