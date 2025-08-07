@@ -25,7 +25,7 @@
           "type": "link_list",
           "settings": {
             "heading": "POLICIES",
-            "menu": "footer"
+            "menu": "policies"
           }
         },
         "footer-2": {
