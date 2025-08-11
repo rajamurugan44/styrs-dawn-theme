@@ -5,6 +5,18 @@ let page = 3;
 
 const load_more_btn = document.getElementsByClassName('load-more_btn')[0];
 const load_more_spinner = document.getElementsByClassName('load-more_spinner')[0];
+
+// Product count elements
+const productRangeStart = document.getElementById('product-range-start');
+const productRangeEnd = document.getElementById('product-range-end');
+const productTotal = document.getElementById('product-total');
+
+
+let products_per_page = window.products_per_page || 50;
+let current_count = products_on_page.getElementsByClassName('grid__item').length;
+
+if (productRangeEnd) productRangeEnd.textContent = current_count;
+
 async function getNextPage() {
   try {
     let res = await fetch(next_url);
@@ -35,6 +47,11 @@ async function loadMoreProducts() {
   for (let i = 0; i < length; i++) {
     products_on_page.appendChild(new_products[0]);
   }
+
+  // Update product count display
+  current_count = products_on_page.getElementsByClassName('grid__item').length;
+  if (productRangeEnd) productRangeEnd.textContent = current_count;
+
   next_url = new_url;
   page++;
 }

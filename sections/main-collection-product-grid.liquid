@@ -188,6 +188,15 @@
                 {% render 'pagination', paginate: paginate, anchor: '' %}
               {%- endif -%}
             {% endcomment %}
+            <div
+              id="product-count"
+              class="pagination-page-total"
+              style="text-align:center; margin-bottom:1rem; font-size:1.1rem; font-weight:500;"
+            >
+              Showing <span id="product-range-start">1</span> -
+              <span id="product-range-end">{{ section.settings.products_per_page }}</span> of
+              <span id="product-total">{{ collection.products_count }}</span> total
+            </div>
             {%- if paginate.pages > 1 -%}
               <div class="load-more">
                 <a class="load-more_btn text-center mt-12 button button-primary" onclick="loadMoreProducts()">
@@ -207,6 +216,10 @@
     {{ 'mask-arch.svg' | inline_asset_content }}
   {%- endif -%}
 </div>
+
+<script>
+  window.products_per_page = {{ section.settings.products_per_page | default: 50 }};
+</script>
 
 {% schema %}
 {

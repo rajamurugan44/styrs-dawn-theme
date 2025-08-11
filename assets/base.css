@@ -3650,6 +3650,10 @@ header.header.header--middle-left.header--mobile-center.page-width.header--has-m
   width: 40%;
 }
 
+.pagination-page-total {
+  font-size: 1.8rem !important;
+}
+
 
 /* Hover on product and display add to cart button */
 /* @media (min-width: 1367px) {
