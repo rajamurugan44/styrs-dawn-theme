@@ -3639,6 +3639,16 @@ header.header.header--middle-left.header--mobile-center.page-width.header--has-m
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
 }
 
+.load-more {
+  position: relative !important;
+  justify-content: center !important;
+  display: flex !important;
+}
+
+.load-more_btn {
+  cursor: pointer !important;
+  width: 40%;
+}
 
 
 /* Hover on product and display add to cart button */
