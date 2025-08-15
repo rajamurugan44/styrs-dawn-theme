@@ -36,10 +36,47 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "1755255408afe12f16": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_0131943_TA8cf4": {
+          "type": "ai_gen_block_0131943",
+          "settings": {
+            "collection": "exquisite-saree-collections",
+            "products_per_page": 8,
+            "target_selector": ".product-grid",
+            "button_text": "Load more products",
+            "button_font_size": 16,
+            "button_padding_horizontal": 32,
+            "button_padding_vertical": 12,
+            "button_border_radius": 8,
+            "button_border_width": 1,
+            "button_background_color": "#000000",
+            "button_text_color": "#ffffff",
+            "button_border_color": "#000000",
+            "button_hover_background_color": "#333333",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_border_color": "#333333",
+            "error_message": "Unable to load more products. Please try again.",
+            "no_more_message": "No more products to load",
+            "error_text_color": "#d82c0d",
+            "no_more_text_color": "#666666",
+            "spacing_top": 40,
+            "spacing_bottom": 40
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_0131943_TA8cf4"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "banner",
-    "product-grid"
+    "product-grid",
+    "1755255408afe12f16"
   ]
 }
