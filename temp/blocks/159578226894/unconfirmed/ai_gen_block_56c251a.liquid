@@ -1,6 +1,358 @@
+{% doc %}
+  @prompt
+    Create a "Load More" button for product grid that uses AJAX to load the next page of products on the same page. The button should automatically hide when no more products are available to load. Include loading state animation and smooth integration with existing product grid layout.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-load-more-container-{{ ai_gen_id }} {
+    display: flex;
+    justify-content: center;
+    margin-top: {{ block.settings.spacing_top }}px;
+    margin-bottom: {{ block.settings.spacing_bottom }}px;}
+
+  .ai-load-more-button-{{ ai_gen_id }} {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border: {{ block.settings.button_border_width }}px solid {{ block.settings.button_border_color }};
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 500;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+    min-height: 48px;
+  }
+
+  .ai-load-more-button-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_hover_color }};
+    color: {{ block.settings.button_hover_text_color }};border-color: {{ block.settings.button_hover_border_color }};
+    transform: translateY(-1px);
+  }
+
+  .ai-load-more-button-{{ ai_gen_id }}:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;transform: none;
+  }
+
+  .ai-load-more-button-{{ ai_gen_id }}:disabled:hover {
+    background-color: {{ block.settings.button_color }};
+    color: {{ block.settings.button_text_color }};
+    border-color: {{ block.settings.button_border_color }};
+  }
+
+  .ai-load-more-text-{{ ai_gen_id }} {
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-load-more-button-{{ ai_gen_id }}.loading .ai-load-more-text-{{ ai_gen_id }} {
+    opacity: 0;
+  }
+
+  .ai-load-more-spinner-{{ ai_gen_id }} {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid transparent;
+    border-top: 2px solid currentColor;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .ai-load-more-button-{{ ai_gen_id }}.loading .ai-load-more-spinner-{{ ai_gen_id }} {
+    opacity: 1;
+    animation: ai-load-more-spin-{{ ai_gen_id }} 1s linear infinite;
+  }
+
+  .ai-load-more-container-{{ ai_gen_id }}.hidden {
+    display: none;
+  }
+
+  .ai-load-more-error-{{ ai_gen_id }} {
+    color: {{ block.settings.error_color }};
+    text-align: center;
+    margin-top: 16px;
+    font-size: 14px;
+  }
+
+  @keyframes ai-load-more-spin-{{ ai_gen_id }} {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-load-more-button-{{ ai_gen_id }} {
+      padding: {{ block.settings.button_padding_vertical | times: 0.8 }}px {{ block.settings.button_padding_horizontal | times: 0.8 }}px;
+      font-size: {{ block.settings.button_font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<ajax-load-more-{{ ai_gen_id }}
+  class="ai-load-more-container-{{ ai_gen_id }}"
+  data-collection-url="{{ collection.url }}"
+  data-current-page="1"
+  data-total-pages="{{ paginate.pages }}"
+  {{ block.shopify_attributes }}
+>
+  <button
+    type="button"
+    class="ai-load-more-button-{{ ai_gen_id }}"
+    aria-label="Load more products">
+    <span class="ai-load-more-text-{{ ai_gen_id }}">{{ block.settings.button_text }}</span>
+    <div class="ai-load-more-spinner-{{ ai_gen_id }}"></div>
+  </button>
+  <div class="ai-load-more-error-{{ ai_gen_id }}" style="display: none;"></div>
+</ajax-load-more-{{ ai_gen_id }}>
+
+<script>
+  (function() {
+    class AjaxLoadMore{{ ai_gen_id }} extends HTMLElement {
+      constructor() {
+        super();
+        this.button = this.querySelector('.ai-load-more-button-{{ ai_gen_id }}');
+        this.errorDiv = this.querySelector('.ai-load-more-error-{{ ai_gen_id }}');
+        this.collectionUrl = this.dataset.collectionUrl;
+        this.currentPage = parseInt(this.dataset.currentPage);
+        this.totalPages = parseInt(this.dataset.totalPages);
+        this.isLoading = false;}
+
+      connectedCallback() {
+        this.setupEventListeners();
+        this.checkIfShouldHide();
+      }
+
+      setupEventListeners() {
+        this.button.addEventListener('click', () => {
+          if (!this.isLoading) {
+            this.loadMoreProducts();
+          }
+        });
+      }
+
+      checkIfShouldHide() {
+        if (this.currentPage >= this.totalPages) {
+          this.classList.add('hidden');}
+      }
+
+      async loadMoreProducts() {
+        this.isLoading = true;
+        this.button.classList.add('loading');
+        this.button.disabled = true;
+        this.errorDiv.style.display = 'none';
+
+        try {
+          const nextPage = this.currentPage + 1;
+          const url = `${this.collectionUrl}?page=${nextPage}&view=ajax`;
+          
+          const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+              'X-Requested-With': 'XMLHttpRequest'
+            }
+          });
+
+          if (!response.ok) {
+            throw new Error('Failed to load products');
+          }
+
+          const html = await response.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          
+          const productGrid = document.querySelector('[data-product-grid]');
+          const newProducts = doc.querySelectorAll('[data-product-item]');
+          
+          if (productGrid && newProducts.length > 0) {
+            newProducts.forEach(product => {
+              productGrid.appendChild(product);
+            });
+
+            this.currentPage = nextPage;
+            this.dataset.currentPage = nextPage;
+
+            if (this.currentPage >= this.totalPages) {
+              this.classList.add('hidden');
+            }
+
+            const event = new CustomEvent('productsLoaded', {
+              detail: {
+                page: this.currentPage,
+                productsCount: newProducts.length 
+              }
+            });
+            document.dispatchEvent(event);} else {
+            this.classList.add('hidden');}
+
+        } catch (error) {
+          console.error('Error loading more products:', error);
+          this.errorDiv.textContent = 'Failed to load more products. Please try again.';
+          this.errorDiv.style.display = 'block';
+        } finally {
+          this.isLoading = false;
+          this.button.classList.remove('loading');
+          this.button.disabled = false;
+        }
+      }
+    }
+
+    customElements.define('ajax-load-more-{{ ai_gen_id }}', AjaxLoadMore{{ ai_gen_id }});
+  })();
+</script>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Load more button",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Button text"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Load more"
+    },
+    {
+      "type": "header",
+      "content": "Button style"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Background color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_color",
+      "label": "Hover background color",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_border_color",
+      "label": "Border color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_border_color",
+      "label": "Hover border color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "button_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 48,
+      "step": 4,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 24,
+      "step": 2,
+      "unit": "px",
+      "label": "Vertical padding",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "spacing_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Top spacing",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "spacing_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Bottom spacing",
+      "default": 40
+    },
+    {
+      "type": "header",
+      "content": "Error styling"
+    },
+    {
+      "type": "color",
+      "id": "error_color",
+      "label": "Error text color",
+      "default": "#d82c0d"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Load more button"
+    }
+  ],
+  "tag": null
+}
 {% endschema %}
